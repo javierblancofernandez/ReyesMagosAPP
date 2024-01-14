@@ -37,7 +37,7 @@ public class BaseDatos {
     /*String url = "jdbc:mysql://localhost:3306/inventario?useUnicode="
             + "true&useJDBCCompliantTimezoneShift="
             + "true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false";*/
-    String url = "jdbc:mysql://localhost:3306/bancoalimentos";
+    String url = "jdbc:mysql://localhost:3306/reyesmagosapp";
     //String password = "admin";
     String password = "javier";
     //String usuario = "root";
@@ -439,7 +439,7 @@ public class BaseDatos {
         try {
             con = DriverManager.getConnection(url, usuario, password);
 
-            String sql = "UPDATE cat_productos SET existencias_prod=? WHERE id_prod=?";
+            String sql = "UPDATE cat_productos SET existencias_prod=? WHERE id_producto=?";
 
             pstm = con.prepareStatement(sql);
 

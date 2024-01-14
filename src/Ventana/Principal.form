@@ -68,8 +68,8 @@
                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   <Component id="jButtonInventarios" min="-2" pref="45" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                  <Component id="jButtonRey" min="-2" pref="57" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="jButtonRey" min="-2" pref="48" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                   <Component id="jButtonVentas" min="-2" pref="45" max="-2" attributes="0"/>
                   <EmptySpace pref="403" max="32767" attributes="0"/>
               </Group>
@@ -94,7 +94,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="jButtonVentas">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Ventas"/>
+            <Property name="text" type="java.lang.String" value=" Pide tu regalo"/>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="grupoModulos"/>
             </Property>

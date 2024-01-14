@@ -225,6 +225,8 @@ public class ProductoFrame extends javax.swing.JDialog {
 
         jLabel7.setText("Precio venta");
 
+        campoPrecioVentaProducto.setText("0.0");
+
         guardarProducto.setText("Guardar");
         guardarProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

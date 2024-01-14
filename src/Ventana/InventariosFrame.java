@@ -49,14 +49,16 @@ public class InventariosFrame extends javax.swing.JInternalFrame {
         modeloTabla.addColumn("nombre");
         modeloTabla.addColumn("unidad");
         modeloTabla.addColumn("PrcioCompra");
-        modeloTabla.addColumn("precioVenta");
+        //modeloTabla.addColumn("precioVenta");
         modeloTabla.addColumn("existencias");
     }
     private void cargarModeloTabla() {
-       
+
+        System.out.println("EStoy en cargar modelo tabla");
         limpiarTabla();
         ArrayList <Producto> listaProductos=base.obtenerProductos();
         int numeroProductos= listaProductos.size();
+        System.out.println("EStoy en cargar modelo tabla"+numeroProductos);
         modeloTabla.setNumRows(numeroProductos);
         
         for (int i = 0; i < listaProductos.size(); i++) {
@@ -66,13 +68,13 @@ public class InventariosFrame extends javax.swing.JInternalFrame {
             String unidad = producto.getUnidadProducto();
             Double precioCompra = producto.getPrecioCompraProducto();
             //Double precioVenta = producto.getPrecioVentaProducto();
-            Double existencias = producto.getStockProducto();
-            modeloTabla.setValueAt(producto, i, 0);
+            Double existencias = producto.getExistenciaProducto();
+            modeloTabla.setValueAt(clave, i, 0);
             modeloTabla.setValueAt(nombre, i, 1);
             modeloTabla.setValueAt(unidad, i, 2);
             modeloTabla.setValueAt(precioCompra, i, 3);
             //modeloTabla.setValueAt(precioVenta, i, 4);
-            modeloTabla.setValueAt(existencias, i, 5);
+            modeloTabla.setValueAt(existencias, i, 4);
         }
 
     }
@@ -416,6 +418,7 @@ public class InventariosFrame extends javax.swing.JInternalFrame {
         double nuevaCantidad=cantidadActual+ existencia;
                 
         base.actualizarInventario(productoSeleccionado, existencia);
+        limpiarTabla();
         cargarModeloTabla();
     }//GEN-LAST:event_jButonAgregarExistenciaActionPerformed
 
@@ -434,7 +437,7 @@ public class InventariosFrame extends javax.swing.JInternalFrame {
             String unidad = producto.getUnidadProducto();
             Double precioCompra=producto.getPrecioCompraProducto();
             //Double precioVenta = producto.getPrecioVentaProducto();
-            Double existencias = producto.getStockProducto();
+            Double existencias = producto.getExistenciaProducto();
             
             //modeloTabla.setValueAt(producto, i, 0);
             modeloTabla.setValueAt(clave, i, 0);
@@ -442,7 +445,7 @@ public class InventariosFrame extends javax.swing.JInternalFrame {
             modeloTabla.setValueAt(unidad, i, 2);
             modeloTabla.setValueAt(precioCompra, i, 3);
             //modeloTabla.setValueAt(precioVenta, i, 4);
-            modeloTabla.setValueAt(existencias, i, 5);
+            modeloTabla.setValueAt(existencias, i, 4);
             
         }
         
@@ -521,6 +524,7 @@ public class InventariosFrame extends javax.swing.JInternalFrame {
 
     private void limpiarTabla() {
         int numFilas= modeloTabla.getRowCount();
+        System.out.println("nume fillas : "+numFilas);
         if (numFilas>0) {
             for (int i = numFilas-1; i >=0 ; i--) {
             modeloTabla.removeRow(i);
