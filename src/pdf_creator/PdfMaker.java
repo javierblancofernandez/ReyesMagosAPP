@@ -72,58 +72,19 @@ public class PdfMaker {
                     "Código Xules");
             // First page
             // Primera página 
-            Chunk chunk = new Chunk("Querido"+nino+":", chapterFont);
-            chunk.setBackground(BaseColor.GRAY);
+            Chunk chunk = new Chunk("Querido "+nino+":", chapterFont);
+            chunk.setBackground(BaseColor.LIGHT_GRAY);
             // Let's create de first Chapter (Creemos el primer capítulo)
             Chapter chapter = new Chapter(new Paragraph(chunk), 1);
             chapter.setNumberDepth(0);
             chapter.add(new Paragraph("", paragraphFont));
-            chapter.add(new Paragraph("Hemos recibido tu pedido de regalos.", paragraphFont));
-            chapter.add(new Paragraph("Y yo el rey"+rey+",en mi nombre y en nombre de mis compañeros. Hemos visto que has sido bueno y no recibirás carbón.", paragraphFont));
-            chapter.add(new Paragraph("Ya hemos cargado tus regalos "+nino+" en nuestros camellos, y pronto recibirás una gran sorpresa.", paragraphFont));
+            chapter.add(new Paragraph("🌴 Aqui desde el lejano Oriente 🌠", paragraphFont));
+            chapter.add(new Paragraph("Hemos recibido tu pedido de regalos", paragraphFont));
+            chapter.add(new Paragraph("Y yo el rey "+rey+",en mi nombre y en nombre de mis compañeros. Hemos visto que has sido bueno y no recibirás carbón.", paragraphFont));
+            chapter.add(new Paragraph("Ya hemos cargado tus regalos 🎁 "+nino+" en nuestros camellos 🐪🐪🐪, y pronto recibirás una gran sorpresa.", paragraphFont));
             chapter.add(new Paragraph("Te manda un gran abrazo tu rey favorito "+rey, paragraphFont));
             document.add(chapter);
 
-            // Second page - some elements
-            // Segunda página - Algunos elementos
-            Chapter chapSecond = new Chapter(new Paragraph(new Anchor("Some elements (Añadimos varios elementos)")), 1);
-            Paragraph paragraphS = new Paragraph("Do it by Xules (Realizado por Xules)", subcategoryFont);
-
-            // Underline a paragraph by iText (subrayando un párrafo por iText)
-            Paragraph paragraphE = new Paragraph("This line will be underlined with a dotted line (Está línea será subrayada con una línea de puntos).");
-            DottedLineSeparator dottedline = new DottedLineSeparator();
-            dottedline.setOffset(-2);
-            dottedline.setGap(2f);
-            paragraphE.add(dottedline);
-            chapSecond.addSection(paragraphE);
-
-            Section paragraphMoreS = chapSecond.addSection(paragraphS);
-            // List by iText (listas por iText)
-            String text = "test 1 2 3 ";
-            for (int i = 0; i < 5; i++) {
-                text = text + text;
-            }
-            List list = new List(List.UNORDERED);
-            ListItem item = new ListItem(text);
-            item.setAlignment(Element.ALIGN_JUSTIFIED);
-            list.add(item);
-            text = "a b c align ";
-            for (int i = 0; i < 5; i++) {
-                text = text + text;
-            }
-            item = new ListItem(text);
-            item.setAlignment(Element.ALIGN_JUSTIFIED);
-            list.add(item);
-            text = "supercalifragilisticexpialidocious ";
-            for (int i = 0; i < 3; i++) {
-                text = text + text;
-            }
-            item = new ListItem(text);
-            item.setAlignment(Element.ALIGN_JUSTIFIED);
-            list.add(item);
-            paragraphMoreS.add(list);
-            document.add(chapSecond);
-            System.out.println("Your PDF file has been generated!(¡Se ha generado tu hoja PDF!");
             document.close();
         } catch (DocumentException documentException) {
             System.out.println("The file not exists (Se ha producido un error al generar un documento): " + documentException);

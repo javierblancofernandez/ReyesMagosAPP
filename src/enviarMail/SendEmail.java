@@ -54,8 +54,8 @@ public class SendEmail {
             texto.setText("Tus deseos se cumplirán --> mira el archivo adjunto");*/
 
             BodyPart adjunto = new MimeBodyPart();
-            adjunto.setDataHandler(new DataHandler(new FileDataSource("C:/Users/javib/Desktop/GeneratePDFFileIText.pdf")));
-            adjunto.setFileName("GeneratePDFFileIText.pdf");
+            adjunto.setDataHandler(new DataHandler(new FileDataSource("C:/Users/javib/Desktop/CartaReyesMagos.pdf")));
+            adjunto.setFileName("CartaReyesMagos.pdf");
             //MimeMultipart multiParte = new MimeMultipart();
 
             /*multiParte.addBodyPart(texto);
@@ -72,7 +72,7 @@ public class SendEmail {
 
             // create bodypart with html content and reference to the content-id
             messageBodyPart = new MimeBodyPart();
-            String htmlText = "<p>Tus deseos se cumplirán --> mira el archivo adjunto</p><br><br><img src=\"cid:vogue\">";
+            String htmlText = "<p> Tus deseos se cumpliran  --> mira el archivo adjunto </p><br><br><img src=\"cid:vogue\">";
             messageBodyPart.setContent(htmlText, "text/html");
             multipart.addBodyPart(messageBodyPart);
             // Create a MimeMessage
@@ -85,7 +85,7 @@ public class SendEmail {
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
 
             // Set the email subject
-            message.setSubject("Hello, this is a test email!");
+            message.setSubject("🐪🐪🐪 Esto es un mensaje Mágico 亗 亗 亗");
 
             // Set the email content
             //message.setText("This is the email content.");

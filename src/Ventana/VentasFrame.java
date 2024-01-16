@@ -418,19 +418,6 @@ public class VentasFrame extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
 
         ArrayList<DetalleVenta> detalles = new ArrayList<DetalleVenta>();
-        //Obtengo el sumatorio de la venta total 
-        /*String sumatorioStr = lblSumatoria.getText();
-        double cantidadVenta = Double.parseDouble(sumatorioStr);
-
-        String pagoConStr = campoPagaCon.getText();
-
-        double cambio = 0;
-
-        if (!pagoConStr.isEmpty()) {
-            double cantidadPago = Double.parseDouble(pagoConStr);
-            cambio = cantidadPago - cantidadVenta;
-
-        }*/
 
         //obtenemos la fecha actual y creamos un objeto Date Sql
         Calendar calendarioLocal = Calendar.getInstance();
@@ -460,19 +447,10 @@ public class VentasFrame extends javax.swing.JInternalFrame {
 
         ArrayList<ResulNinoRey> result= base.obtenerNinoResultado();
         System.out.println("nombre"+(result.get(0)).getNombreNino()+"Rey mago"+(result.get(0)).getNombreRey()+"email"+(result.get(0)).getEmailNino());
-        /*if (!pagoConStr.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "<html><h1 style='font-size:200px; color:blue'>" + cambio + "</h1></html>", " Usted debe dar este cambio", 1);
-            campoPagaCon.setText("");karka
-        }*/
+
         JOptionPane.showMessageDialog(this, "<html><p style='font-size:15px; color:blue'><b>"+(result.get(0)).getNombreNino()+"</b>Tus regalos te los llevará tu Rey <b>"+(result.get(0)).getNombreRey()+"</p></html>", "Tus regalos Registrados", 1);
-        //campoPagaCon.setText("");
-        /*Resultado articulo = new Resultado(null, true,idVenta,"Resultado");
-        articulo.setVisible(true);
-        articulo.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-        articulo.setLocation(600, 150);
-        articulo.setAlwaysOnTop(true);*/
         PdfMaker generatePDFFileIText = new PdfMaker();
-        generatePDFFileIText.createPDF(new File("C:/Users/javib/Desktop/GeneratePDFFileIText.pdf"),(result.get(0)).getNombreNino(),(result.get(0)).getNombreRey());
+        generatePDFFileIText.createPDF(new File("C:/Users/javib/Desktop/CartaReyesMagos.pdf"),(result.get(0)).getNombreNino(),(result.get(0)).getNombreRey());
         SendEmail email = new SendEmail();//
         email.envioDeEmail((result.get(0)).getEmailNino());
 
