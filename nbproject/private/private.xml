@@ -2,6 +2,12 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/javib/Documents/NetBeansProjects/ReyesMagosAPP/src/pdf_creator/PdfMaker.java</file>
+            <file>file:/C:/Users/javib/Documents/NetBeansProjects/ReyesMagosAPP/src/base_datos/BaseDatos.java</file>
+            <file>file:/C:/Users/javib/Documents/NetBeansProjects/ReyesMagosAPP/src/pojos/Nino.java</file>
+            <file>file:/C:/Users/javib/Documents/NetBeansProjects/ReyesMagosAPP/src/enviarMail/SendEmail.java</file>
+            <file>file:/C:/Users/javib/Documents/NetBeansProjects/ReyesMagosAPP/src/Ventana/VentasFrame.java</file>
+        </group>
     </open-files>
 </project-private>
